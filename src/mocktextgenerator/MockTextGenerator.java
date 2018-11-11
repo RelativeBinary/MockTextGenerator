@@ -35,7 +35,11 @@ public class MockTextGenerator extends JFrame {
         frame.add(panel);
 
         panel.setLayout(layout);
-        
+        //re-align components
+        input.setLineWrap(true);
+        input.setSize(300, 600);
+        output.setLineWrap(true);
+        output.setSize(300, 600);
 
         //Addd stuff to the panel
         panel.add(style, BorderLayout.PAGE_START);
@@ -49,20 +53,10 @@ public class MockTextGenerator extends JFrame {
         frame.setVisible(true);
         frame.setResizable(false);
 
-        //re-align components
-        input.setLineWrap(true);
-        input.setSize(300, 600);
-        output.setLineWrap(true);
-        output.setSize(300,600);
-        
         //methods
-        convert.addMouseListener(new MouseAdapter() {
-            
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                String newtext = convertText(input.getText());
-                output.setText(newtext);
-            }
+        convert.addActionListener(event -> {
+            String newtext = convertText(input.getText());
+            output.setText(newtext);
         });
 
     }
@@ -147,5 +141,3 @@ public class MockTextGenerator extends JFrame {
     //</editor-fold>
 
 }
-
-
