@@ -1,2 +1,2 @@
-# MockTextGenerator
-Based on a joke
+# mock-text-generator
+mAkeS tExT loOk LIkE tHiS.
